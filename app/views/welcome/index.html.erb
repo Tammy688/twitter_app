@@ -1,9 +1,19 @@
-<h1>Welcome to my Twitter App</h1>
-<p>More information to come soon</p>
 
-<% if user_signed_in? %>
-	<div>Signed in as... <%= current_user.email %></div>
-<% else %>
-	You are not signed in!
-  <%= link_to("Login", new_user_session_path) %>
-<% end %>
+<div class="container">
+  <div class="row">
+  	<div class="col-md-6">
+  		<h2 id="title">We Didn't <br> re-invent the telephone</h2>
+			<p id="subtitle">We just made communication a tad bit better :-)</p>
+  		<% if user_signed_in? %>
+				<div class="login_status">Signed in as  <%= current_user.email %></div>
+			<% else %>
+				<div class="login_status">You are <b>not</b> signed in  
+  				<%= link_to("Login", new_user_session_path, :class => "btn btn-primary btn-lg active" ) %>
+  			</div>
+			<% end %>
+  	</div>
+    <div class="col-md-6">
+    	<%= link_to image_tag("/assets/old_telephone.png", :border => 0, :alt => '', :title => ''), root_path, :class => 'welcome_image' %>
+    </div>
+  </div>
+</div>

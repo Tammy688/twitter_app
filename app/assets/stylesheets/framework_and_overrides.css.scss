@@ -1,15 +1,25 @@
 // import the CSS framework
 @import "bootstrap";
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
+@import url(http://fonts.googleapis.com/css?family=Lato:300,900);
 
 // make all images responsive by default
 img {
   @extend .img-responsive;
   margin: 0 auto;
   }
+
 // override for the 'Home' navigation link
+.navbar {
+  height: 60px;
+}
+
+
 .navbar-brand {
   font-size: inherit;
+  text-decoration: none !important;
   }
+
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -30,12 +40,14 @@ img {
   @extend .btn-primary;
   @extend .btn-lg;
   }
+
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
-  padding-bottom: 80px;
+  background-color: #ffffff;
+  padding-top: 60px;
+  padding-bottom: 40px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   }
@@ -43,3 +55,53 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+
+
+// Section for nav icons
+.nav_icon-large {
+  font-size: 25px;
+  padding-top: 10px;
+  
+}
+
+.brand {
+  position: fixed;
+  left: 40px;
+  top: 7px;
+}
+
+#title {
+  font-family: Lato, sans-serif;
+  font-size: 81px;
+  font-weight: 900;
+  line-height: 67px;
+  padding-top: 30px;
+  padding-left: 60px;
+}
+
+#subtitle {
+  font-family: Lato, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: right;
+  line-height: 30px;
+  padding-top: 10px;
+  padding-left: 60px;
+}
+
+.login_status {
+  font-family: Lato, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: left;
+  line-height: 30px;
+  padding-top: 10px;
+  padding-left: 74px;
+}
+
+.btn {
+  width: 100px !important;
+}
+
+  
