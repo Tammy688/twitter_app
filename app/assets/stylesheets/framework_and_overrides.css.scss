@@ -11,13 +11,22 @@ img {
 
 // override for the 'Home' navigation link
 .navbar {
-  height: 60px;
+  height: 54px;
+  border-radius: 0 !important;
 }
-
 
 .navbar-brand {
   font-size: inherit;
   text-decoration: none !important;
+  margin-top: -10px;
+  padding-left: 30px !important;
+  }
+
+  .navbar-nav {
+  font-family: Lato, sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  padding-left: 50px !important;
   }
 
 
@@ -46,7 +55,7 @@ img {
 main {
   @extend .container;
   background-color: #ffffff;
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 40px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
@@ -65,11 +74,17 @@ section {
   
 }
 
-.brand {
-  position: fixed;
-  left: 40px;
+// navigation section
+
+.nav_link {
+  margin-left: 40px;
   top: 7px;
 }
+
+.navbar-form {
+  
+}
+
 
 #title {
   font-family: Lato, sans-serif;
