@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
 
   # GET /tweets
   # GET /tweets.json
@@ -22,8 +22,9 @@ class TweetsController < ApplicationController
   def edit
   end
 
-  # POST /tweets
-  # POST /tweets.json
+  # POST / tweets
+  # POST / tweets.json
+  # POST / tweets.js
   def create
     @tweet = Tweet.new(tweet_params)
 
@@ -31,6 +32,7 @@ class TweetsController < ApplicationController
       if @tweet.save
         format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
         format.json { render action: 'show', status: :created, location: @tweet }
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @tweet.errors, status: :unprocessable_entity }
