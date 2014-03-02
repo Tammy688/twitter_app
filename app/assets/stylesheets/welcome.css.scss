@@ -2,3 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* User sign in and sign forms. */
+
+.border-form-div {
+	font-family: Lato, sans-serif;
+  font-weight: 300;	
+  font-size: 16px;
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #f9f9f9;
+  
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 1 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 1 1px 2px rgba(0,0,0,.05);
+          box-shadow: 1 1px 2px rgba(0,0,0,.05);
+}
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+	font-family: Lato, sans-serif;
+  font-weight: 300;	
+  font-size: 16px;
+  margin-bottom: 10px;
+
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  	
+	font-family: Lato, sans-serif;
+  font-weight: 300;	
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+
+}
+
+h2 {
+	font-family: Lato, sans-serif !important;
+  font-weight: 900 !important;	
+}
+

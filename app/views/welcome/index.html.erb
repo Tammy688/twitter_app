@@ -4,25 +4,11 @@
       <h2 id="title">We Didn't <br> re-invent the telephone</h2>
       <p id="subtitle">We just made communication a tad bit better :-)</p>
       <% if user_signed_in? %>
-        <div class="login_status">Signed in as  <%= current_user.email %></div>
+        <div class="login_status">Signed in as  <%= current_user.email %> </div>
       <% else %>
         <div class="first login_status">You are <b>not</b> signed in  
-          <button type="button" class="btn btn-default btn-lg" >Login</button>
+          <a href= <%= new_user_session_path %> class="btn btn-default btn-lg active" role="button">Login</a>
         </div>
-        <form class="form-inline" role="form" style="display:none">
-          <div class="form-group">
-            <label class="sr-only" for="exampleInputEmail2">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-          </div>       
-          <div class="form-group">
-            <label class="sr-only" for="exampleInputPassword2">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-            <div class="checkbox">
-              <label><input type="checkbox"> Remember me </label>
-              <button type="submit" class="btn btn-default btn-lg">Sign in</button>
-            </div>
-          </div>         
-        </form>
       <% end %>
     </div>
     <div class="col-md-6">
@@ -30,12 +16,5 @@
     </div>
   </div>
 
-  
 
-<!-- Script to handle showing sign in fields -->
-<script>
-$( "button" ).click(function() {
-  $( "form" ).show(400);
-  $(".first").hide();
-});
-</script>
+
