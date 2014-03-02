@@ -56,7 +56,7 @@ main {
   @extend .container;
   background-color: #ffffff;
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 5px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   }
@@ -81,28 +81,22 @@ section {
   top: 7px;
 }
 
-.navbar-form {
-  
-}
-
 
 #title {
   font-family: Lato, sans-serif;
-  font-size: 81px;
+  font-size: 75px;
   font-weight: 900;
-  line-height: 67px;
-  padding-top: 30px;
-  padding-left: 60px;
+  line-height: 60px;
+  padding-top: 10px;
 }
 
 #subtitle {
   font-family: Lato, sans-serif;
   font-size: 30px;
   font-weight: 300;
-  text-align: right;
+  text-align: left;
   line-height: 30px;
   padding-top: 10px;
-  padding-left: 60px;
 }
 
 .login_status {
@@ -112,11 +106,31 @@ section {
   text-align: left;
   line-height: 30px;
   padding-top: 10px;
-  padding-left: 74px;
 }
 
-.btn {
-  width: 100px !important;
+.btn-default {
+  background-color: #4e9ad2 !important;
+  color: white !important;
+  margin-left: 5px;
 }
+
+.form-inline {
+  font-family: Lato, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  padding-top: 10px;  
+}
+
+.checkbox {
+  font-size: 16px;
+  padding-top: 10px;
+  padding-left: 150px !important;
+  display: inline-block !important;
+}
+
+.form-group {
+  display: inline !important;
+}
+
 
   
