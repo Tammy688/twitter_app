@@ -12,18 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :comments %><br>
-    <%= f.text_field :comments %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
+    User ID<br>
     <%= f.number_field :user_id %>
   </div>
   <div class="field">
-    <%= f.label :tweet_id %><br>
+    Tweet ID<br>
     <%= f.number_field :tweet_id %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_area :comments, size: "60x4" %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

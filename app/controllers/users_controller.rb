@@ -1,10 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+      
+    # assigning currently logged in user to instance variable @user
+    @user = current_user
+
+    @tweets = current_user.tweets
+
+    @comments = current_user.comments
+
   end
 
   # GET /users/1

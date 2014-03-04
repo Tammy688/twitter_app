@@ -5,6 +5,8 @@
       <p id="subtitle">We just made communication a tad bit better :-)</p>
       <% if user_signed_in? %>
         <div class="login_status">Signed in as  <%= current_user.email %> </div>
+        <%= link_to 'User profile', users_path %>
+
       <% else %>
         <div class="first login_status">You are <b>not</b> signed in  
           <button class="btn btn-default">Click to sign in</button>       
