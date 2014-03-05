@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     # assigning currently logged in user to instance variable @user
     @user = current_user
 
-    @tweets = current_user.tweets
+    @tweets = current_user.tweets.last(10)
 
     @comments = current_user.comments
 

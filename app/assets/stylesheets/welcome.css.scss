@@ -47,7 +47,16 @@ h2 {
   font-weight: 900 !important;	
 }
 
-#profile_pic {
-  float:left;
+#profile_header {
+  text-align: center;
 }
+
+.profile_content {
+  text-align: center;
+  font-family: Lato, sans-serif;
+  font-weight: 300; 
+  font-size: 16px;
+}
+
+
 

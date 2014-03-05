@@ -1,51 +1,27 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
+      
       <h2 id="title">We Didn't <br> re-invent the telephone</h2>
       <p id="subtitle">We just made communication a tad bit better :-)</p>
       <% if user_signed_in? %>
-        <div class="login_status">Signed in as  <%= current_user.email %> </div>
-        <%= link_to 'User profile', users_path %>
+        <div class="login_status">Signed in as  <b>&nbsp<%= current_user.email %></b> </div>
+        <%= link_to 'User profile', users_path, :class => "btn btn-default" %>
 
       <% else %>
         <div class="first login_status">You are <b>not</b> signed in  
-          <button class="btn btn-default">Click to sign in</button>       
+          <%= link_to 'Sign in', new_user_session_path, :class => "btn btn-default" %>      
         </div>
       <% end %>
-    <div class="row">
-                <div class="col-md-6">  
-                  <form class="form-inline" role="form" style="display:none">
-                    <div class="form-group">
-                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-                    </div>       
-                    <div class="form-group">
-                      <label class="sr-only" for="exampleInputPassword2">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-                    </div>     
-                    <div class="checkbox">
-                      <label>
-                      <input type="checkbox"> Remember me
-                    </label>
-                    </div>
-                      <button type="submit" class="btn btn-default">Sign in</button>
-                  </form>
-                </div>
-              <div class="col-md-0"></div>
-            </div>
-
-
-
+   
     </div>
-    <div class="col-md-6">
-      <img class="welcome_image" src="/assets/old_telephone.png">
+
+      <div class="col-md-6">
+        <img class="welcome_image" src="/assets/old_telephone.png">
+      </div>
+    
     </div>
   </div>
-
-
-
- 
-
 
 <script>
 $( "button" ).click(function() {
@@ -53,5 +29,8 @@ $( "button" ).click(function() {
   $( "form" ).toggle( "slow" );
 });
 </script>
+
+
+
 
 

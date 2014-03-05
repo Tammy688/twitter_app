@@ -1,62 +1,36 @@
-<h3>Current User Profile</h3>
-<div id="profile_pic">
-  <%= image_tag("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQS7SpTArHpWhlhvR0UraYiYtj-YHnP7fdpZAQRuFd8kzeCjUG7") %>
-</div>
+<div class="container"> 
+  <div class="row">
+    <div class="col-md-4">   
+      <div>
+        <h3 id="profile_header">User Profile</h3><br>
+        <%= image_tag("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQS7SpTArHpWhlhvR0UraYiYtj-YHnP7fdpZAQRuFd8kzeCjUG7") %>
+        <br>
+        <p class="profile_content"><b>Name: &nbsp</b> <%= @user.first_name %> <%= @user.last_name %> </p>
+        <p class="profile_content"><b>Photo url: &nbsp</b> <%= @user.photo_url %> </p>
+        <p class="profile_content"><b>Twitter handle: &nbsp </b> @<%= @user.twitter_handle %> </p>
+        <p class="profile_content"><b>Email: </b> &nbsp<%= @user.email %> </p>
+      </div>
+    </div> 
+    
+    <div class="col-md-8">
+      <h3 id="profile_header_left">Recent Tweets</h3><br>
 
+      <table class="table table-striped">
+        <thead>
+        </thead>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>First name</th>   
-      <th>Last name</th>
-      <th>Photo url</th>
-      <th>Twitter handle</th>
-      <th>Email</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+        <tbody>
+          <% @tweets.each do |tweet| %>
+            <tr>
+              <td>
+                <%= tweet.tweets %>  <i> | &nbsp<%= tweet.comments.count %> comments</i>
+              </td> 
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div> 
+  </div>
 
-  <tbody>
-      <tr>
-        <td><%= @user.first_name %></td>
-        <td><%= @user.last_name %></td>
-        <td><%= @user.photo_url %></td>
-        <td><%= @user.twitter_handle %></td>
-        <td><%= @user.email %></td>      
-      </tr>
-  </tbody>
-</table>
-
-<br>
-
-<h3>Most recent tweets</h3>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Tweet ID</th>
-      <th>Tweets</th> 
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tweets.each do |tweet| %>
-      <tr>
-        <td><%= tweet.id %></td>
-        <td><%= tweet.tweets %> (<%= @comments.count %> comments)</td> 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<br>
-<br>
-<%= link_to 'New User', new_user_path %>
 
 

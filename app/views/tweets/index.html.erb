@@ -1,10 +1,8 @@
-<h1>Listing tweets</h1>
+<h3>List of tweets for @<%= current_user.twitter_handle %></h3>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User ID</th>
-      <th>Tweet ID</th>
       <th>Tweets</th> 
       <th></th>
       <th></th>
@@ -15,9 +13,7 @@
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
-        <td><%= tweet.user_id %></td>
-        <td><%= tweet.id %></td>
-        <td><%= tweet.tweets %></td> 
+        <td><%= tweet.tweets %>  <i> | &nbsp<%= tweet.comments.count %> comments</i></td>
         <td><%= link_to 'Show', tweet %></td>
         <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
         <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
