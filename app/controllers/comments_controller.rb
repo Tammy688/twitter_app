@@ -2,24 +2,30 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
-  include TeetsHelper #include the helper method from the resource tweets (can be used in other controllers)
-
+  include TweetsHelper #include the helper method from the resource tweets (can be used in other controllers)
 
   # GET /comments
   # GET /comments.json
   def index
     @comments = Comment.all
-
   end
 
   # GET /comments/1
   # GET /comments/1.json
   def show
+
   end
 
   # GET /comments/new
   def new
     @comment = Comment.new
+
+    # the tweet_id is passed from the tweets show view in the symbol
+    @tweet_id = params[:tweet_id]
+
+    # the tweet with the new tweet_id is found from the tweets
+    @tweet = Tweet.find(@tweet_id)
+
   end
 
   # GET /comments/1/edit
@@ -31,12 +37,18 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
 
-    # comment.user_id = current_user.id
+    @comment.user_id = current_user.id
+
+    puts "***************************************************"
+    puts "DEBUG CODE"
+    puts ":tweet_id --> #{comment_params[:tweet_id]}"
+    puts "***************************************************"
 
     # update the number of comments for each tweet
-    #set_num_comments(params[:tweet_id])
-
-    #logic for updating comments should be set up a helper
+    # Note that the logic for this method is in the Tweets helper
+    # NOTE: Rails gives you params which contains stuff that the page passes around
+    # Remember that commen_params is passed from the FORM!!!!!!
+    set_num_comments(comment_params[:tweet_id])
 
 
     respond_to do |format|

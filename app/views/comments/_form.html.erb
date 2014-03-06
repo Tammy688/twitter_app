@@ -11,24 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    User ID<br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    Tweet ID<br>
-    <%= f.number_field :tweet_id %>
-  </div>
+  <h3>Add a comment to the <i>tweet</i> below</h3>
+  <blockquote>
+    <h4><%= @tweet.tweets %></h4>
+    <small><i>by&nbsp</i><%= @tweet.user.email %></small>
+  </blockquote> 
   <div class="field">
     <%= f.label :comments %><br>
-    <%= f.text_area :comments, size: "60x4" %>
+    <%= f.text_area :comments, size: "60x4", :placeholder => "Enter your comments here" %>
   </div>
   <div class="actions">
-
-    <!-- need to use a hidden form field to store the tweet id -->
-    <%= f.hidden_field :tweet_id, :value => @tweet_id %>
-
-    <%= f.submit %>
+    <!-- need to use a hidden form field to store the tweet id and pass it on with the 
+         submit button -->
+    <%= f.hidden_field :tweet_id, value: @tweet_id %>
+    <%= f.submit :class => "btn btn-default"%>
   </div>
 <% end %>
 

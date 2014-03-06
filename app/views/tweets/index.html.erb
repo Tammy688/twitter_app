@@ -1,11 +1,11 @@
-<h3>List of tweets for @<%= current_user.twitter_handle %></h3>
+<h3>Listing tweets</h3>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Tweets</th> 
-      <th></th>
-      <th></th>
+      <th>User ID</th> 
+      <th>Tweet</th>
+      <th>Num comments</th>
       <th></th>
     </tr>
   </thead>
@@ -13,7 +13,9 @@
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
-        <td><%= tweet.tweets %>  <i> | &nbsp<%= tweet.comments.count %> comments</i></td>
+        <td><%= tweet.user_id %></td>
+        <td><%= tweet.tweets %></td>
+        <td><%= tweet.num_comments %></td>
         <td><%= link_to 'Show', tweet %></td>
         <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
         <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -22,7 +24,5 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Tweet', new_tweet_path %>
+<%= link_to 'New Tweet', new_tweet_path, :class => "btn btn-default" %>
 

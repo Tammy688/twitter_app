@@ -13,17 +13,12 @@
 
   <div id="response_message1"></div>
 
-  
-  <div class="field">
-    User ID<br>
-    <%= f.number_field :user_id %>
-  </div>
   <div class="field">
     <%= f.label :tweets %><br>
-    <%= f.text_area :tweets, size: "60x4" %>
+    <%= f.text_area :tweets, size: "60x4", :placeholder => "Enter your tweets here" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
 <% end %>
 

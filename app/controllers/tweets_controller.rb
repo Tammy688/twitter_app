@@ -11,6 +11,12 @@ class TweetsController < ApplicationController
   # GET /tweets/1
   # GET /tweets/1.json
   def show
+    # get all comments for this tweet
+    @comments = @tweet.comments
+
+    # get the number of comments each tweet has
+    @num_comments = @comments.count
+
   end
 
   # GET /tweets/new
@@ -27,6 +33,9 @@ class TweetsController < ApplicationController
   # POST / tweets.js
   def create
     @tweet = Tweet.new(tweet_params)
+
+    # This is necessary to link each tweets user_id to the current_user.id
+    @tweet.user_id = current_user.id
 
     respond_to do |format|
       if @tweet.save
@@ -72,6 +81,6 @@ class TweetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tweet_params
-      params.require(:tweet).permit(:tweets, :user_id, :comment_id)
+      params.require(:tweet).permit(:tweets, :user_id, :comment_id, :num_comments)
     end
 end
