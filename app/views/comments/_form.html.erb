@@ -24,6 +24,10 @@
     <%= f.text_area :comments, size: "60x4" %>
   </div>
   <div class="actions">
+
+    <!-- need to use a hidden form field to store the tweet id -->
+    <%= f.hidden_field :tweet_id, :value => @tweet_id %>
+
     <%= f.submit %>
   </div>
 <% end %>

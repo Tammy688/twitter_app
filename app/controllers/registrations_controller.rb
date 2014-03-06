@@ -1,4 +1,4 @@
-class RegistrationsController < Devise::RegistrationsController
+ fclass RegistrationsController < Devise::RegistrationsController
   before_filter :configure_permitted_parameters, :only => [:create]
 
   protected

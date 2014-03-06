@@ -2,6 +2,9 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
+  include TeetsHelper #include the helper method from the resource tweets (can be used in other controllers)
+
+
   # GET /comments
   # GET /comments.json
   def index
@@ -27,6 +30,14 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
+
+    # comment.user_id = current_user.id
+
+    # update the number of comments for each tweet
+    #set_num_comments(params[:tweet_id])
+
+    #logic for updating comments should be set up a helper
+
 
     respond_to do |format|
       if @comment.save
