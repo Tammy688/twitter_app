@@ -4,8 +4,13 @@ TwitterApp::Application.routes.draw do
 
   root "welcome#index"
 
+  get "tweets/update_all_tweets"
   get "welcome/index"
   get "welcome/about"
+
+  
+
+
   resources :comments
 
   resources :tweets

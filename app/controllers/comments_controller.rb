@@ -26,6 +26,9 @@ class CommentsController < ApplicationController
     # the tweet with the new tweet_id is found from the tweets
     @tweet = Tweet.find(@tweet_id)
 
+    # setting up relationship between a child and a parent (belongs_to)
+    @user = @comment.user
+
   end
 
   # GET /comments/1/edit

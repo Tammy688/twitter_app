@@ -2,6 +2,8 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   #before_filter :authenticate_user!
 
+  include TweetsHelper
+
   # GET /tweets
   # GET /tweets.json
   def index
@@ -16,6 +18,23 @@ class TweetsController < ApplicationController
 
     # get the number of comments each tweet has
     @num_comments = @comments.count
+
+  end
+
+  # this method is defined to retroactively update all the num_comments !!
+  # this is a throw-away method which is discarded once it's function is complete!!
+  def update_all_tweets
+
+    tweets = Tweet.all
+
+    @response_html = ""
+
+    tweets.each do |tweet|
+      set_num_comments (tweet.id)
+
+      @response_html += "Update tweet <b>#{tweet.id}<b><br><br> \n "
+
+    end
 
   end
 

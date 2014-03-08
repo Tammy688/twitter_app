@@ -7,4 +7,10 @@ class User < ActiveRecord::Base
   has_many :tweets
   has_many :comments
 
+ 
+  # using the model to define a custom twitter handle for the user
+  def twitter_name
+  	"@" + twitter_handle
+  end
+
 end
