@@ -26,6 +26,4 @@ module TweetsHelper
 
 		end
 
-
-
 end

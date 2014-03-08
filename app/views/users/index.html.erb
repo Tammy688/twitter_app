@@ -24,6 +24,8 @@
             <tr>
               <td>
                 <%= tweet.tweets %>  <i> | &nbsp<%= tweet.comments.count %> comments</i>
+                <td><%= link_to 'Show', tweet %></td>
+                <td><%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </td> 
             </tr>
           <% end %>

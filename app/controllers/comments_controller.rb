@@ -47,13 +47,6 @@ class CommentsController < ApplicationController
     puts ":tweet_id --> #{comment_params[:tweet_id]}"
     puts "***************************************************"
 
-    # update the number of comments for each tweet
-    # Note that the logic for this method is in the Tweets helper
-    # NOTE: Rails gives you params which contains stuff that the page passes around
-    # Remember that commen_params is passed from the FORM!!!!!!
-    set_num_comments(comment_params[:tweet_id])
-
-
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
@@ -63,7 +56,21 @@ class CommentsController < ApplicationController
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
+  
+    # Update the number of comments for each tweet
+    # --------------------------------------------
+    # Important to add this after a save to ensure that you don't lag
+    # behind in counting!!
+    # Note that the logic for this method is in the Tweets helper
+    # NOTE: Rails gives you params which contains stuff that the page passes around
+    # Remember that commen_params is passed from the FORM!!!!!!
+    set_num_comments(comment_params[:tweet_id])
+
   end
+
+
+
+
 
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json

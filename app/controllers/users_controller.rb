@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
     @tweets = current_user.tweets.last(10)
 
-    @comments = current_user.comments
+    @comments = @user.comments
 
   end
 
