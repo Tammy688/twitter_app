@@ -3,7 +3,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>User ID</th> 
+      <th>Twitter handle</th> 
       <th>Tweet</th>
       <th>Num comments</th>
       <th></th>
@@ -13,7 +13,7 @@
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
-        <td><%= tweet.user_id %></td>
+        <td><%= tweet.user.twitter_name %></td>
         <td><%= tweet.tweets %></td>
         <td><%= tweet.num_comments %></td>
         <td><%= link_to 'Show', tweet %></td>

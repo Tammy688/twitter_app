@@ -68,10 +68,6 @@ class CommentsController < ApplicationController
 
   end
 
-
-
-
-
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
